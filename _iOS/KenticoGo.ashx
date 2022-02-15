@@ -14,7 +14,7 @@ public class KenticoGo : IHttpHandler {
     // Kentico Go - the iOS Kentico Management App - © 2011 Mike Irving
     // See: https://www.mike-irving.co.uk/KenticoGo
     //
-	// Version 1.03
+	// Version 1.04
     
     // Configurable Variables
     //
@@ -42,7 +42,10 @@ public class KenticoGo : IHttpHandler {
     private int     intMaxRows;
 
     public void ProcessRequest (HttpContext context) {
-        int kenticoVersion = Convert.ToInt16(CMSContext.FullSystemSuffixVersion.ToString().Split('.')[0]);
+		string stringScriptVersion = "1.04";
+		string stringKenticoVersion = CMSContext.FullSystemSuffixVersion.ToString();
+		
+		int kenticoVersion = Convert.ToInt16(CMSContext.FullSystemSuffixVersion.ToString().Split('.')[0]);
 		
 		stringRequestType   = ValidationHelper.GetString(context.Request.Form["requestType"], "");
         stringRequestType   = stringRequestType.ToUpper();
@@ -98,6 +101,8 @@ public class KenticoGo : IHttpHandler {
                 {
                     output += "<authenticationOK>TRUE</authenticationOK>";
                     output += "<overviewOK>TRUE</overviewOK>";
+					output += "<scriptVersion>" + stringScriptVersion + "</scriptVersion>";
+					output += "<kenticoVersion>" + stringKenticoVersion + "</kenticoVersion>";
                     output += "<machineName>" + HTTPHelper.MachineName +"</machineName>";
                     output += "<aspnetAccount>" + System.Security.Principal.WindowsIdentity.GetCurrent().Name + "</aspnetAccount>";
                     output += "<memory>" + DataHelper.GetSizeString(GC.GetTotalMemory(false)) + "</memory>";
