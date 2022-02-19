@@ -35,4 +35,4 @@ private static bool enforceSSL = true;
 private static string allowedUsers = "ANY";
 
 ## Video Clip
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/KNDN6HqiFrQ/0.jpg)](https://www.youtube.com/watch?v=KNDN6HqiFrQ)
+[![Kentico Go iOS Manager video clip](https://img.youtube.com/vi/KNDN6HqiFrQ/0.jpg)](https://www.youtube.com/watch?v=KNDN6HqiFrQ)
