@@ -1,0 +1,3 @@
+*.ashx linguist-detectable=false
+*.aspx linguist-detectable=false
+*.cs linguist-detectable=true
